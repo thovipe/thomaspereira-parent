@@ -1,11 +1,9 @@
-package br.edu.infnet.thomaspereirasellerapi.controller;
+package br.edu.infnet.webapi.controller;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.CreditCardData;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.StatementPayment;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementPaymentRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementPaymentResponseDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.service.StatementPaymentService;
+import br.edu.infnet.webapi.model.domain.CreditCardData;
+import br.edu.infnet.webapi.model.domain.dto.StatementPaymentRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.StatementPaymentResponseDTO;
+import br.edu.infnet.webapi.model.service.StatementPaymentService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

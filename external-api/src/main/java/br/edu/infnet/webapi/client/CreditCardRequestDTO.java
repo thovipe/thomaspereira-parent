@@ -1,6 +1,5 @@
-package br.edu.infnet.webapi.dto;
+package br.edu.infnet.webapi.client;
 
-import br.edu.infnet.webapi.model.domain.CardOnfile;
 import org.springframework.stereotype.Component;
 
 @Component

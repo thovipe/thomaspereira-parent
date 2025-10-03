@@ -1,4 +1,4 @@
-package br.edu.infnet.webapi.dto;
+package br.edu.infnet.webapi.model.domain.dto;
 
 public class SellerRequestDTO {
 

@@ -1,8 +1,8 @@
-package br.edu.infnet.thomaspereirasellerapi.controller;
+package br.edu.infnet.webapi.controller;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.SellerRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.SellerResponseDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.service.SellerService;
+import br.edu.infnet.webapi.model.domain.dto.SellerRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.SellerResponseDTO;
+import br.edu.infnet.webapi.model.service.SellerService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

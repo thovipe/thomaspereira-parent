@@ -1,4 +1,4 @@
-package br.edu.infnet.thomaspereirasellerapi.model.exception;
+package br.edu.infnet.webapi.model.exception;
 
 public class InvalidSellerException extends RuntimeException {
     public InvalidSellerException(String message) {

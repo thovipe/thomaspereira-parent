@@ -1,6 +1,5 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain.client;
+package br.edu.infnet.webapi.client;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.CreditCardRequestDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,7 +13,7 @@ import java.util.List;
 public interface CieloZeroAuthFeignClient {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    CieloZeroAuthResponse checkCreditCard(@RequestBody CreditCardRequestDTO CardNumber, @RequestHeader String MerchantId, @RequestHeader String MerchantKey);
+    CieloZeroAuthResponse checkCreditCard(@RequestBody CreditCardRequestDTO CardNumber, @RequestHeader("MerchantId") String MerchantId, @RequestHeader("MerchantKey") String MerchantKey);
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     class CieloZeroAuthResponse {

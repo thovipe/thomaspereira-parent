@@ -1,8 +1,12 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain;
+package br.edu.infnet.webapi.model.loader;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.SellerRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.StatementRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.SellerNotFoundException;
+import br.edu.infnet.webapi.model.domain.MonthReference;
+import br.edu.infnet.webapi.model.domain.Statement;
+import br.edu.infnet.webapi.model.domain.StatementItem;
+import br.edu.infnet.webapi.model.domain.StatementStatus;
+import br.edu.infnet.webapi.model.exception.SellerNotFoundException;
+import br.edu.infnet.webapi.model.repository.SellerRepository;
+import br.edu.infnet.webapi.model.repository.StatementRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;

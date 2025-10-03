@@ -1,4 +1,4 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain;
+package br.edu.infnet.webapi.model.domain;
 
 public enum MonthReference {
 

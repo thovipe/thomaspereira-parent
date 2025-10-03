@@ -1,4 +1,4 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain.client;
+package br.edu.infnet.webapi.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

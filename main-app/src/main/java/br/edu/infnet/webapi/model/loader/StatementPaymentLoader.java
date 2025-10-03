@@ -1,11 +1,15 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain;
+package br.edu.infnet.webapi.model.loader;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementPaymentRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.SellerRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.StatementPaymentRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.StatementRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.service.StatementPaymentService;
+import br.edu.infnet.webapi.model.domain.CreditCardData;
+import br.edu.infnet.webapi.model.domain.MonthReference;
+import br.edu.infnet.webapi.model.domain.StatementItem;
+import br.edu.infnet.webapi.model.domain.StatementStatus;
+import br.edu.infnet.webapi.model.domain.dto.StatementPaymentRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.StatementRequestDTO;
+import br.edu.infnet.webapi.model.repository.SellerRepository;
+import br.edu.infnet.webapi.model.repository.StatementPaymentRepository;
+import br.edu.infnet.webapi.model.repository.StatementRepository;
+import br.edu.infnet.webapi.model.service.StatementPaymentService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;

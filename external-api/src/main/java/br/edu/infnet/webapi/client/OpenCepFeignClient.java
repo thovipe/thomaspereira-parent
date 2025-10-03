@@ -1,4 +1,4 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain.client;
+package br.edu.infnet.webapi.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(value="OpenCep", url="${url.opencep.api}")
 public interface OpenCepFeignClient {
 
-    @GetMapping(value="/{zipCode}")
-    OpenCepAddressResponse getAddress(@PathVariable String zipCode);
+   @GetMapping(value="/{zipCode}")
+   OpenCepAddressResponse getAddress(@PathVariable("zipCode") String zipCode);
 
     class OpenCepAddressResponse {
         private String cep;

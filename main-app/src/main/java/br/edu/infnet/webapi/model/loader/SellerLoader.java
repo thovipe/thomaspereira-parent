@@ -1,9 +1,9 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain;
+package br.edu.infnet.webapi.model.loader;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.client.OpenCepFeignClient;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.SellerRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.AddressNotFoundException;
-import br.edu.infnet.thomaspereirasellerapi.model.service.AddressService;
+import br.edu.infnet.webapi.client.OpenCepFeignClient;
+import br.edu.infnet.webapi.model.domain.Seller;
+import br.edu.infnet.webapi.model.repository.SellerRepository;
+import br.edu.infnet.webapi.model.service.AddressService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-//import java.io.FileWriter;
 
 @Component
 @Order(value = 1)

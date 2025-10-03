@@ -1,13 +1,16 @@
-package br.edu.infnet.thomaspereirasellerapi.model.service;
+package br.edu.infnet.webapi.model.service;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.CardOnfile;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.CreditCardData;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.Statement;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.StatementPayment;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.client.CieloZeroAuthFeignClient;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.*;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.SellerRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.StatementPaymentRepository;
+import br.edu.infnet.webapi.client.CreditCardRequestDTO;
+import br.edu.infnet.webapi.client.CieloZeroAuthFeignClient;
+import br.edu.infnet.webapi.client.CardOnfile;
+import br.edu.infnet.webapi.model.domain.CreditCardData;
+import br.edu.infnet.webapi.model.domain.Statement;
+import br.edu.infnet.webapi.model.domain.StatementPayment;
+import br.edu.infnet.webapi.model.domain.dto.StatementPaymentRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.StatementPaymentResponseDTO;
+import br.edu.infnet.webapi.model.domain.dto.StatementResponseDTO;
+import br.edu.infnet.webapi.model.repository.SellerRepository;
+import br.edu.infnet.webapi.model.repository.StatementPaymentRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

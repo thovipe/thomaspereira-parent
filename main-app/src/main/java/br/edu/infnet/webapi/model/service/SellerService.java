@@ -1,12 +1,12 @@
-package br.edu.infnet.thomaspereirasellerapi.model.service;
+package br.edu.infnet.webapi.model.service;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.Address;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.Seller;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.AddressResponseDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.SellerRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.SellerResponseDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.SellerRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.SellerNotFoundException;
+import br.edu.infnet.webapi.model.domain.Address;
+import br.edu.infnet.webapi.model.domain.Seller;
+import br.edu.infnet.webapi.model.domain.dto.AddressResponseDTO;
+import br.edu.infnet.webapi.model.domain.dto.SellerRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.SellerResponseDTO;
+import br.edu.infnet.webapi.model.exception.SellerNotFoundException;
+import br.edu.infnet.webapi.model.repository.SellerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

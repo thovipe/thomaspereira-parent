@@ -1,4 +1,4 @@
-package br.edu.infnet.webapi.model.domain;
+package br.edu.infnet.webapi.client;
 
 public class CardOnfile {
 

@@ -1,4 +1,4 @@
-package br.edu.infnet.thomaspereirasellerapi.model.exception;
+package br.edu.infnet.webapi.model.exception;
 
 public class InvalidItemValueException extends RuntimeException{
     public InvalidItemValueException(String message) {

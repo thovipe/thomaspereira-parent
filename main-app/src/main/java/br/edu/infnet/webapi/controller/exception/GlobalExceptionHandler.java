@@ -1,6 +1,6 @@
-package br.edu.infnet.thomaspereirasellerapi.controller.exception;
+package br.edu.infnet.webapi.controller.exception;
 
-import br.edu.infnet.thomaspereirasellerapi.model.exception.InvalidSellerException;
+import br.edu.infnet.webapi.model.exception.InvalidSellerException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

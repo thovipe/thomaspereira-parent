@@ -1,6 +1,6 @@
-package br.edu.infnet.thomaspereirasellerapi.model.domain.repository;
+package br.edu.infnet.webapi.model.repository;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.Seller;
+import br.edu.infnet.webapi.model.domain.Seller;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

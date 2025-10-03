@@ -1,15 +1,15 @@
-package br.edu.infnet.thomaspereirasellerapi.model.service;
+package br.edu.infnet.webapi.model.service;
 
-import br.edu.infnet.thomaspereirasellerapi.model.domain.Statement;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.StatementStatus;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementRequestDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.dto.StatementResponseDTO;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.SellerRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.domain.repository.StatementRepository;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.InvalidItemValueException;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.InvalidMonthReferenceException;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.InvalidQuantityItemValueException;
-import br.edu.infnet.thomaspereirasellerapi.model.exception.SellerNotFoundException;
+import br.edu.infnet.webapi.model.domain.Statement;
+import br.edu.infnet.webapi.model.domain.StatementStatus;
+import br.edu.infnet.webapi.model.domain.dto.StatementRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.StatementResponseDTO;
+import br.edu.infnet.webapi.model.exception.InvalidItemValueException;
+import br.edu.infnet.webapi.model.exception.InvalidMonthReferenceException;
+import br.edu.infnet.webapi.model.exception.InvalidQuantityItemValueException;
+import br.edu.infnet.webapi.model.exception.SellerNotFoundException;
+import br.edu.infnet.webapi.model.repository.SellerRepository;
+import br.edu.infnet.webapi.model.repository.StatementRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -34,7 +34,7 @@ public class StatementService {
         this.sellerRepository = sellerRepository;
     }
 
-    public  StatementResponseDTO copyFromStatement(Statement statement) {
+    public StatementResponseDTO copyFromStatement(Statement statement) {
         StatementResponseDTO statementResponseDTO = new StatementResponseDTO();
         statementResponseDTO.setId(statement.getId());
         statementResponseDTO.setDescription(statement.getDescription());
@@ -94,7 +94,7 @@ public class StatementService {
 
                if(statementItem.getItemValue().equals(BigDecimal.ZERO) || statementItem.getItemValue() == null)
                {
-                   throw new InvalidItemValueException ("Value cannot be null or zero.");
+                   throw new InvalidItemValueException("Value cannot be null or zero.");
                }
                if(statementItem.getItemValue().compareTo(BigDecimal.ZERO) < 0)
                {

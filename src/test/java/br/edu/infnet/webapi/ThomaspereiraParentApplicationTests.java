@@ -1,4 +1,4 @@
-package br.edu.infnet.thomaspereiraparent;
+package br.edu.infnet.webapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

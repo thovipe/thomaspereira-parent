@@ -1,4 +1,4 @@
-package br.edu.infnet.webapi.client;
+package br.edu.infnet.webapi.model.domain.dto;
 
 import org.springframework.stereotype.Component;
 

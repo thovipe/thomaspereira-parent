@@ -1,8 +1,8 @@
 package br.edu.infnet.webapi.model.service;
 
-import br.edu.infnet.webapi.client.CreditCardRequestDTO;
+import br.edu.infnet.webapi.model.domain.dto.CreditCardRequestDTO;
 import br.edu.infnet.webapi.client.CieloZeroAuthFeignClient;
-import br.edu.infnet.webapi.client.CardOnfile;
+import br.edu.infnet.webapi.model.domain.dto.CardOnfile;
 import br.edu.infnet.webapi.model.domain.CreditCardData;
 import br.edu.infnet.webapi.model.domain.Statement;
 import br.edu.infnet.webapi.model.domain.StatementPayment;

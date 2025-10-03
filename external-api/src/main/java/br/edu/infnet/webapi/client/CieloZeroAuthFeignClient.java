@@ -1,5 +1,6 @@
 package br.edu.infnet.webapi.client;
 
+import br.edu.infnet.webapi.model.domain.dto.CreditCardRequestDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.cloud.openfeign.FeignClient;

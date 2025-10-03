@@ -32,7 +32,7 @@ public class StatementPaymentController {
     }
 
     @PostMapping(value="/isvalid")
-    public ResponseEntity<Boolean> isCreditCardValid(@RequestBody @Valid CreditCardData cardNumber, @RequestHeader String merchantId, @RequestHeader String merchantKey){
+    public ResponseEntity<Boolean> isCreditCardValid(@RequestBody @Valid CreditCardData cardNumber, @RequestHeader("merchantId") String merchantId, @RequestHeader("merchantKey") String merchantKey){
         return ResponseEntity.status((HttpStatus.CREATED)).body(statementPaymentService.isValidCreditCard(cardNumber, merchantId, merchantKey));
     }
 

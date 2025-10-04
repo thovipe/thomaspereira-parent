@@ -1,0 +1,728 @@
+{
+	"info": {
+		"_postman_id": "26600b7f-fc0a-4abc-8664-c4ba14a26bb3",
+		"name": "thomaspereiraapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "831465",
+		"_collection_link": "https://thomas-pereira.postman.co/workspace/thomaspereiraapi~d4263c9d-8110-4059-ad6a-a56b3f472cbf/collection/831465-26600b7f-fc0a-4abc-8664-c4ba14a26bb3?action=share&source=collection_link&creator=831465"
+	},
+	"item": [
+		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "getSellers",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sellers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sellers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSellersById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sellers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sellers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSeller",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MicroStore\",\n    \"email\": \"administrator@microstore.com\",\n    \"isActive\": true,\n    \"cnpj\": \"23.456.789/0001-45\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sellers/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sellers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSeller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"AllowMarket\",\n    \"email\": \"admin@allowmarket.com\",\n    \"isActive\": false,\n    \"address\": {\n        \"streetName\": \"Av. Juscelino Kubitschek\",\n        \"district\": \"Plano Diretor Sul\",\n        \"city\": \"Palmas\",\n        \"state\": \"Tocantins\",\n        \"zipCode\": \"77016-001\",\n        \"country\": \"Brasil\",\n        \"complement\": \"Loja 12\",\n        \"number\": 567\n    },\n    \"cieloTransactions\": [],\n    \"cnpj\": \"89.050.385/0001-80\",\n    \"customer\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sellers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sellers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivateSeller",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sellers/19/deactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sellers",
+								"19",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSeller",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sellers/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sellers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "CreateTransaction",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "ProviderId",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "ProviderKey",
+								"value": "IRVVOZKOGEBQHVDHUMEIDPIZDTYEGJMMBAFHSIAL",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"customer\":{\n       \"name\": \"Gilberto Braga\",\n       \"email\": \"gilberto@braga.com\",\n       \"phone\": \"21990090921\",\n       \"cpf\": \"123.444.777-00\",\n       \"address\": {\n           \"streetName\": \"Rua Silva e Goes\",\n           \"district\": \"Centro\",\n           \"city\": \"Rio de Janeiro\",\n           \"state\": \"RJ\",\n           \"zipCode\": \"20002-080\",\n           \"country\": \"Brasil\",\n           \"complement\": \"SL 19\",\n           \"number\": 141\n       }\n    },\n  \"merchantOrderId\": \"2a3c071e-94dc-4e01-9cb3-4afe2fe49546\",\n  \"payment\" : {\n    \"currency\" : \"BRL\",\n    \"amount\" : 100,\n    \"installments\" : 1,\n    \"authenticated\" : false,\n    \"CreditCard\" : {\n      \"holder\": \"Alice da Veiga\",\n      \"cardNumber\" : \"1234123412341234\",\n      \"securityCode\" : 123,\n      \"expirationDate\" : \"12/2030\",\n      \"brand\" : \"Visa\"\n    },\n    \"Type\" : \"CreditCard\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "ProviderId",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "ProviderKey",
+								"value": "IRVVOZKOGEBQHVDHUMEIDPIZDTYEGJMMBAFHSIAL",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"customer\":{\n       \"name\": \"Gilberto Braga\",\n       \"email\": \"gilberto@braga.com\",\n       \"phone\": \"21990090921\",\n       \"cpf\": \"123.444.777-00\",\n       \"address\": {\n           \"streetName\": \"Rua Silva e Goes\",\n           \"district\": \"Centro\",\n           \"city\": \"Rio de Janeiro\",\n           \"state\": \"RJ\",\n           \"zipCode\": \"20002-080\",\n           \"country\": \"Brasil\",\n           \"complement\": \"SL 19\",\n           \"number\": 141\n       }\n    },\n  \"sellerId\": 1,\n  \"merchantOrderId\" : \"d7c98b92-2d5a-4369-a932-7c00070b0674\",\n  \"payment\" : {\n    \"currency\" : \"BRL\",\n    \"amount\" : 100,\n    \"installments\" : 1,\n    \"authenticated\" : false,\n    \"CreditCard\" : {\n      \"cardNumber\" : \"1234123412341234\",\n      \"securityCode\" : 123,\n      \"expirationDate\" : \"12/2030\",\n      \"brand\" : \"Visa\"\n    },\n    \"Type\" : \"CreditCard\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionByMerchantOrderId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/transactions/2a3c071e-94dc-4e01-9cb3-4afe2fe49546",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"transactions",
+								"2a3c071e-94dc-4e01-9cb3-4afe2fe49546"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTransaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"customer\":{\n       \"name\": \"Gilberto Braga\",\n       \"email\": \"gilberto@braga.com\",\n       \"phone\": \"21990090921\",\n       \"cpf\": \"123.444.777-00\",\n       \"seller\": {\n        \"id\": 1,\n        \"cnpj\": \"19.123.555/0001-99\",\n        \"name\": \"SuperStore\",\n        \"email\": \"admin@superstore.com\"\n       },\n       \"address\": {\n           \"streetName\": \"Rua Silva e Goes\",\n           \"district\": \"Centro\",\n           \"city\": \"Rio de Janeiro\",\n           \"state\": \"RJ\",\n           \"zipCode\": \"20002-080\",\n           \"country\": \"Brasil\",\n           \"complement\": \"SL 19\",\n           \"number\": 141\n       }\n    },\n  \"merchantOrderId\": \"2a3c071e-94dc-4e01-9cb3-4afe2fe49546\",\n  \"merchantName\": \"TechNo Doctor....\",\n  \"payment\" : {\n    \"currency\" : \"BRL\",\n    \"amount\" : 100000,\n    \"installments\" : 1,\n    \"authenticated\" : false,\n    \"CreditCard\" : {\n      \"cardNumber\" : \"1234123412341234\",\n      \"securityCode\" : 123,\n      \"expirationDate\" : \"12/2030\",\n      \"brand\" : \"Visa\"\n    },\n    \"Type\" : \"CreditCard\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/transactions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTransaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/transactions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Costumer",
+			"item": [
+				{
+					"name": "getCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/customers/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"customers",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sellerId",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gilberto Braga Junior\",\n    \"email\": \"junior@braga.com\",\n    \"phone\": \"21990090921\",\n    \"cpf\": \"123.444.888-00\",\n    \"address\": {\n        \"streetName\": \"Rua Silva e Goes\",\n        \"district\": \"Centro\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"zipCode\": \"20002-080\",\n        \"country\": \"Brasil\",\n        \"complement\": \"SL 19\",\n        \"number\": 141\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n\n        \"name\": \"Larissa Teixeira\",\n        \"email\": \"larissa.teixeira@protonmail.com\",\n        \"phone\": \"63988776644\",\n        \"cpf\": \"456.789.123-21\",\n        \"address\": {\n        \"streetName\": \"Quadra 104 Sul\",\n        \"district\": \"Plano Diretor Sul\",\n        \"city\": \"Palmas\",\n        \"state\": \"Tocantins\",\n        \"zipCode\": \"77001-000\",\n        \"country\": \"Brasil\",\n        \"complement\": \"Loja 18\",\n        \"number\": 5\n    }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/customers/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"customers",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/customers/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"customers",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statements",
+			"item": [
+				{
+					"name": "getStatements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/statements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStatementById",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/statements/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addStatement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"APRIL\",\n    \"sellerCnpj\": \"19.123.555/0001-99\",\n    \"description\": \"Loader test statement.\",\n    \"statementItems\": [\n        {\n            \"itemCode\": \"COMPUTER\",\n            \"itemQuantity\": 5,\n            \"description\": \"Loader test statement item.\",\n            \"itemName\": \"Dell Computer\",\n            \"itemValue\": 1500.00,\n            \"billable\": true\n        }\n    ],\n    \"status\": \"OPEN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/statements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStatement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/statements/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatementPayment",
+			"item": [
+				{
+					"name": "getStatementPayments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"APRIL\",\n    \"sellerCnpj\": \"19.123.555/0001-99\",\n    \"description\": \"Loader test statement.\",\n    \"statementItems\": [\n        {\n            \"itemCode\": \"COMPUTER\",\n            \"itemQuantity\": 5,\n            \"description\": \"Loader test statement item.\",\n            \"itemName\": \"Dell Computer\",\n            \"itemValue\": 1500.00,\n            \"billable\": true\n        }\n    ],\n    \"status\": \"OPEN\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/statementpayments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statementpayments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStatementPaymentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/statementpayments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statementpayments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "isValidCreditCard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "merchantId",
+								"value": "c77aad9f-43c5-4896-9b3e-ebd23ed09e5b",
+								"type": "text"
+							},
+							{
+								"key": "merchantKey",
+								"value": "YPWRRSJVGGSFTGDCLBJCNZGSTENLNCFAPCIHRRJF",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"creditCardNumber\": \"5315281703921200\",\n    \"holderName\": \"Aline de Souza\",\n    \"expirationDate\": \"12/2035\",\n    \"securityCode\": \"123\",\n    \"brand\": \"Visa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/statementpayments/isvalid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statementpayments",
+								"isvalid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createStatementPayment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "merchantId",
+								"value": "c77aad9f-43c5-4896-9b3e-ebd23ed09e5b",
+								"type": "text"
+							},
+							{
+								"key": "merchantKey",
+								"value": "YPWRRSJVGGSFTGDCLBJCNZGSTENLNCFAPCIHRRJF",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"statement\": {\n        \"reference\": \"APRIL\",\n        \"sellerCnpj\": \"19.123.555/0001-99\",\n        \"description\": \"PostMan test statement.\",\n        \"statementItems\": [\n                {\n                    \"itemCode\": \"COMPUTER\",\n                    \"itemQuantity\": 5,\n                    \"description\": \"Loader test statement item.\",\n                    \"itemName\": \"Dell Computer\",\n                    \"itemValue\": 1500.00,\n                    \"isBillable\": true\n\n                }\n    ],\n    \"status\": \"OPEN\"\n    },\n    \"creditCard\": {\n        \"creditCardNumber\": \"5502095822650000\",\n        \"holderName\": \"Aline de Souza\",\n        \"expirationDate\": \"12/2035\",\n        \"securityCode\": \"123\",\n        \"brand\": \"Visa\"\n    },\n    \"paymentDate\": \"2025-10-01T21:17:11.524032\",\n    \"statementAmount\": 27500.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/statementpayments/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"statementpayments",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

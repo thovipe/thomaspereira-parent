@@ -6,6 +6,7 @@ import br.edu.infnet.webapi.model.service.SellerService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,27 +22,32 @@ public class SellerController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<SellerResponseDTO>> getAllSellers() {
         return ResponseEntity.status(HttpStatus.OK).body(sellerService.getSellers());
     }
 
     @GetMapping(value="/{id}")
-    public ResponseEntity<SellerResponseDTO> getSellerById(@PathVariable Long id) {
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    public ResponseEntity<SellerResponseDTO> getSellerById(@PathVariable("id") Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(sellerService.getSeller(id));
     }
 
     @PostMapping()
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<SellerResponseDTO> addSeller(@Valid @RequestBody SellerRequestDTO seller) {
         return ResponseEntity.status(HttpStatus.CREATED).body(sellerService.addSeller(seller));
     }
 
     @PutMapping(value="/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<SellerResponseDTO> updateSeller(@Valid @RequestBody SellerRequestDTO seller) {
         return ResponseEntity.status(HttpStatus.OK).body(sellerService.updateSeller(seller));
     }
 
     @DeleteMapping(value="/{id}")
-    public ResponseEntity<Void> deleteSeller(@PathVariable Long id) {
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> deleteSeller(@PathVariable("id") Long id) {
         sellerService.deleteSeller(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

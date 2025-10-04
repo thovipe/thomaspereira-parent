@@ -7,6 +7,7 @@ import br.edu.infnet.webapi.model.service.StatementPaymentService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +23,14 @@ public class StatementPaymentController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
     public ResponseEntity<List<StatementPaymentResponseDTO>> getAllStatementPaymentService() {
         return ResponseEntity.status(HttpStatus.OK).body(statementPaymentService.getStatementPayments());
     }
 
     @GetMapping(value="/{id}")
-    public ResponseEntity<StatementPaymentResponseDTO> getStatementPaymentById(@PathVariable Long id) {
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
+    public ResponseEntity<StatementPaymentResponseDTO> getStatementPaymentById(@PathVariable("id") Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(statementPaymentService.getStatementPaymentById(id));
     }
 
